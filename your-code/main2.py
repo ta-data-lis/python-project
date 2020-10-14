@@ -58,7 +58,7 @@ key_b = {
 }
 
 bedroom_1 = {
-    "name": "bedroom_1",
+    "name": "bedroom 1",
     "type": "room",
 }
 
@@ -90,7 +90,7 @@ key_d = {
 }
 
 bedroom_2 = {
-    "name": "bedroom_2",
+    "name": "bedroom 2",
     "type": "room",
 }
 
@@ -119,10 +119,10 @@ object_relations = {
     "piano": [key_a],
     "outside": [door_d],
     "door a": [game_room, bedroom_1],
-    "bedroom_1": [door_a, door_b, door_c, queen_bed],
+    "bedroom 1": [door_a, door_b, door_c, queen_bed],
     "queen bed": [key_b],
     "door b": [bedroom_1, bedroom_2],
-    "bedroom_2": [door_b, double_bed, dresser],
+    "bedroom 2": [door_b, double_bed, dresser],
     "double bed": [key_c],
     "dresser": [key_d],
     "door c": [bedroom_1, living_room],
