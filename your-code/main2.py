@@ -6,7 +6,23 @@ Escape Room Game
 
 @author: Cinthya Blois, Daniela Oliveira and Ivan Picavet
 """
-import PySimpleGUI as sg
+from pygame import mixer
+import time
+from gtts import gTTS 
+import os
+
+def text_to_speech(text):
+    language = "en"
+    speech = gTTS(text = text, lang = language, slow = False)
+    speech.save("text.mp3")
+    talk = os.system("start text.mp3")
+    return talk
+
+def mixer_noise(file): # complete path to the file that has to be play
+    mixer.init()
+    mixer.music.load(file)
+    make_some_noise = mixer.music.play()
+    return make_some_noise
 
 # define rooms and items
 
@@ -151,7 +167,10 @@ def start_game():
     """
     Start the game
     """
-    print("You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!")
+    text = "You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!"
+    starter_sound = "C:/cygwin/home/Cinthya/Ironhack_bootcamp/C:/cygwin/home/Cinthya/Ironhack_bootcamp/python-project/your-code/starter.wav"
+    mixer_noise(starter_sound)
+    print(text)
     play_room(game_state["current_room"])
 
 def play_room(room):
@@ -162,6 +181,8 @@ def play_room(room):
     """
     game_state["current_room"] = room
     if(game_state["current_room"] == game_state["target_room"]):
+        sound1 = "C:/cygwin/home/Cinthya/Ironhack_bootcamp/C:/cygwin/home/Cinthya/Ironhack_bootcamp/python-project/your-code/fireworks.mp3"
+        mixer_noise(sound1)
         print("Congrats! You escaped the room!")
     else:
         print("You are now in " + room["name"])
@@ -212,12 +233,16 @@ def examine_item(item_name):
         if(item["name"] == item_name):
             output = "You examine " + item_name + ". "
             if(item["type"] == "door"):
+                sound_door_lock = "C:/cygwin/home/Cinthya/Ironhack_bootcamp/C:/cygwin/home/Cinthya/Ironhack_bootcamp/python-project/your-code/LOCK_CLO.WAV"
+                mixer_noise(sound_door_lock)
                 have_key = False
                 for key in game_state["keys_collected"]:
                     if(key["target"] == item):
                         have_key = True
                 if(have_key):
                     output += "You unlock it with a key you have."
+                    sound_door_open = "C:/cygwin/home/Cinthya/Ironhack_bootcamp/C:/cygwin/home/Cinthya/Ironhack_bootcamp/python-project/your-code/DOOROPEN.WAV"
+                    mixer_noise(sound_door_open)
                     next_room = get_next_room_of_door(item, current_room)
                 else:
                     output += "It is locked but you don't have the key."

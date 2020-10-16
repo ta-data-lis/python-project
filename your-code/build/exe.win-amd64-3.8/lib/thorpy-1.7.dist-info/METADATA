@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: thorpy
+Version: 1.7
+Summary: GUI library for pygame
+Home-page: http://www.thorpy.org/
+Author: Yann Thorimbert
+Author-email: yann.thorimbert@gmail.com
+License: MIT
+Keywords: pygame,gui,menus,buttons,widgets
+Platform: UNKNOWN
+
+GUI library for pygame
+
+
