@@ -1,14 +1,64 @@
 # define rooms and items
 
+# furniture objects
 couch = {
     "name": "couch",
     "type": "furniture",
 }
 
-door_a = {
-    "name": "door a",
-    "type": "door",
+
+piano = {
+    "name": "piano",
+    "type": "furniture",
 }
+
+queen_bed = {
+    "name": "queen bed",
+    "type": "furniture",
+}
+
+double_bed = {
+    "name": "double bed",
+    "type": "furniture",
+}
+
+dresser = {
+    "name": "dresser",
+    "type": "furniture",
+}
+
+dining_table = {
+    "name": "dining table",
+    "type": "furniture",
+}
+
+
+
+#rooms
+
+game_room = {
+    "name": "game room",
+    "type": "room",
+}
+
+bedroom_1 = {
+    "name": "bedroom_1",
+    "type": "room",
+}
+
+bedroom_2 = {
+    "name": "bedroom_2",
+    "type": "room",
+}
+
+living_room = {
+    "name": "living_room",
+    "type": "room",
+}
+
+
+
+#keys
 
 key_a = {
     "name": "key for door a",
@@ -16,19 +66,56 @@ key_a = {
     "target": door_a,
 }
 
-piano = {
-    "name": "piano",
-    "type": "furniture",
+key_b = {
+    "name": "key for door b",
+    "type": "key",
+    "target": door_b,
 }
 
-game_room = {
-    "name": "game room",
-    "type": "room",
+key_c = {
+    "name": "key for door c",
+    "type": "key",
+    "target": door_c,
 }
+
+key_d = {
+    "name": "key for door d",
+    "type": "key",
+    "target": door_d,
+}
+
+
+
+#doors
+
+door_a = {
+    "name": "door a",
+    "type": "door",
+}
+
+door_b = {
+    "name": "door b",
+    "type": "door",
+}
+
+door_c = {
+    "name": "door c",
+    "type": "door",
+}
+
+door_d = {
+    "name": "door d",
+    "type": "door",
+}
+
+
+
+#outside
 
 outside = {
   "name": "outside"
 }
+
 
 all_rooms = [game_room, outside]
 
