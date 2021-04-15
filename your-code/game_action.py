@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 15 22:21:20 2021
 
-@author: pedroafflalo
-"""
 from sample_code_cell1 import object_relations, INIT_GAME_STATE
 game_state = INIT_GAME_STATE
 
