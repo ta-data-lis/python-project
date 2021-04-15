@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 15 22:19:25 2021
-
-@author: pedroafflalo
-"""
-
 # define rooms and items
 
 couch = {
