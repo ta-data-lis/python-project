@@ -1,6 +1,8 @@
 
-from sample_code_cell1 import object_relations, INIT_GAME_STATE
-game_state = INIT_GAME_STATE
+from objects_and_rooms import object_relations, INIT_GAME_STATE
+
+# Load initial game state
+game_state = INIT_GAME_STATE.copy()
 
 def linebreak():
     """
@@ -95,7 +97,7 @@ def examine_item(item_name):
     if(output is None):
         print("The item you requested is not found in the current room.")
     
-    if(next_room and input("Do you want to go to the next room? Ener 'yes' or 'no'").strip() == 'yes'):
+    if(next_room and input("Do you want to go to the next room? Enter 'yes' or 'no'").strip() == 'yes'):
         play_room(next_room)
     else:
         play_room(current_room)
