@@ -1,8 +1,8 @@
-
-from objects_and_rooms import object_relations, INIT_GAME_STATE
+import objects_and_rooms
+from objects_and_rooms import object_relations
 
 # Load initial game state
-game_state = INIT_GAME_STATE.copy()
+game_state = objects_and_rooms.INIT_GAME_STATE.copy()
 
 def linebreak():
     """
