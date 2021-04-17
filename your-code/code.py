@@ -170,7 +170,7 @@ def play_room(room):
         else:
             print("Not sure what you mean. Type 'explore' or 'examine'.")
             play_room(room)
-        linebreak()
+        #linebreak()
 
 
 #Explore a room. List all items belonging to this room.
@@ -240,6 +240,12 @@ def examine_item(item_name):
 
 #start the game
 
-game_state = INIT_GAME_STATE.copy()
-
-start_game()
+while True:
+    INIT_GAME_STATE = {"current_room": game_room,"keys_collected": [],"target_room": outside}
+    game_state = INIT_GAME_STATE.copy()
+    start_game()
+    restart = input("New Game: Yes or No?").lower().strip()
+    if restart == "No":
+        break
+    elif restart == "Yes":
+        continue
