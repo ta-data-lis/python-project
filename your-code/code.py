@@ -332,7 +332,7 @@ def examine_item(item_name):
             elif(item["name"] == "closet"):
                 #new_start_game()
                 #output = "\nThere's a monster at the closet, and now you will go back to the Game Room! Don`t be sad, you didn't lose your keys"
-                return print("\nThere's a monster at the closet, and now you will go back to the Game Room!")
+                return print("\nThere's a monster at the closet! You lose and now you will go back to the Game Room!")
             elif(item["name"] == "dining table"):
                 print("The Monster invites you for one last challenge!")
                 while len(winner) == 0:
@@ -386,11 +386,11 @@ while True:
     "door d": [kitchen, living_room],
     "door e": [living_room, outside],
 }
-    INIT_GAME_STATE = {"current_room": game_room,"keys_collected": [],"target_room": outside}
-    game_state = INIT_GAME_STATE.copy()
-    start_game()
+    #INIT_GAME_STATE = {"current_room": game_room,"keys_collected": [],"target_room": outside}
+    #game_state = INIT_GAME_STATE.copy()
+    #start_game()
     restart = input("New Game: Yes or No?").lower().strip()
-    if restart == "No":
+    if restart == "no":
         break
-    elif restart == "Yes":
+    elif restart == "yes":
         continue
