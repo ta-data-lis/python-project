@@ -133,6 +133,8 @@ INIT_GAME_STATE = {
     "target_room": outside
 }
 
+import pygame
+
 
 def linebreak():
     """
@@ -145,6 +147,7 @@ def start_game():
     Start the game
     """
     print("You wake up on a couch and find yourself in a strange haunted house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!")
+    show_image("hauntedhouse")
     play_room(game_state["current_room"])
 
 def play_room(room):
@@ -215,6 +218,7 @@ def examine_item(item_name):
                 else:
                     output += "It is locked but you don't have the key."
             else:
+                show_image(str(item["name"]))
                 if(item["name"] in object_relations and len(object_relations[item["name"]])>0):
                     item_found = object_relations[item["name"]].pop()
                     game_state["keys_collected"].append(item_found)
@@ -231,6 +235,52 @@ def examine_item(item_name):
         play_room(next_room)
     else:
         play_room(current_room)
+
+def show_image(name):
+  
+    # activate the pygame library .
+    # initiate pygame and give permission
+    # to use pygame's functionality.
+    pygame.init()
+  
+    # define the RGB value
+    # for white colour
+    black = (0,0,0)
+    running = True
+  
+    # assigning values to X and Y variable
+    X = 600
+    Y = 600
+  
+    # create the display surface object
+    #of specific dimension..e(X, Y).
+    display_surface = pygame.display.set_mode((X, Y ))
+  
+    # create a surface object, image is drawn on it.
+    image = pygame.image.load('pics/' + name +'.jpg')
+  
+    # infinite loop
+    while running :
+  
+        # completely fill the surface object
+        # with white colour
+        display_surface.fill(black)
+  
+        # copying the image surface object
+        # to the display surface object at
+        # (0, 0) coordinate.
+        display_surface.blit(image, (0, 0))
+
+
+        # Draws the surface object to the screen.  
+        pygame.display.update() 
+
+        pygame.time.wait(2000)
+        running = False
+        pygame.quit()
+        break
+
+
 
 
 game_state = INIT_GAME_STATE.copy()
