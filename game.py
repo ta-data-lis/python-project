@@ -82,17 +82,17 @@ game_room = {
 }
 
 bedroom_1 = {
-        "name": "bedroom_1",
+        "name": "bedroom 1",
         "type": "room",
         }
 
 bedroom_2 = {
-        "name": "bedroom_2",
+        "name": "bedroom 2",
         "type": "room",
         }
 
 living_room = {
-        "name": "living_room",
+        "name": "living room",
         "type": "room",
         }
 
