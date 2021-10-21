@@ -6,8 +6,10 @@ couch = {
     "type": "furniture",
 }
 
-queen_bed = {
-    "name": "queen bed",
+
+ghost = {
+    "name": "ghost",
+
     "type": "furniture",
         }
 
@@ -56,23 +58,25 @@ key_d = {
     "target": door_d,
 }
 
-piano = {
-    "name": "piano",
+zombie = {
+    "name": "zombie",
     "type": "furniture",
 }
 
-double_bed = {
-    "name": "double bed",
+
+werewolf = {
+    "name": "werewolf",
     "type": "furniture",
 }
 
-dresser = {
-    "name": "dresser",
+dracula = {
+    "name": "dracula",
     "type": "furniture",
 }
 
-dining_table= {
-    "name": "dining table",
+
+frankenstein = {
+    "name": "frankenstein",
     "type": "furniture",
 }
 
@@ -107,13 +111,13 @@ all_doors = [door_a, door_b, door_c, door_d]
 # define which items/rooms are related
 
 object_relations = {
-    "game room": [couch, piano, door_a],
-    "bedroom 1": [queen_bed, door_a,door_b, door_c],
-    "bedroom 2": [double_bed, dresser, door_b],
-    "living room": [dining_table, door_c, door_d],
-    "piano": [key_a],
-    "dresser": [key_d],
-    "double bed": [key_c],
+    "game room": [couch, zombie, door_a],
+    "bedroom_1": [ghost, door_a,door_b, door_c],
+    "bedroom_2": [werewolf, dracula, door_b],
+    "living_room": [frankenstein, door_c, door_d],
+    "zombie": [key_a],
+    "dracula": [key_d],
+    "werewolf": [key_c],
     "outside": [door_a],
     "door a": [game_room, bedroom_1],
     "door b": [bedroom_1, bedroom_2],
@@ -144,7 +148,7 @@ def start_game():
     """
     Start the game
     """
-    print("You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!")
+    print("You wake up on a couch and find yourself in a strange haunted house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!")
     play_room(game_state["current_room"])
 
 def play_room(room):
@@ -203,7 +207,7 @@ def examine_item(item_name):
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
-            output = "You examine " + item_name + ". "
+            output = "You encounter " + item_name + ". "
             if(item["type"] == "door"):
                 have_key = False
                 for key in game_state["keys_collected"]:
