@@ -1,7 +1,6 @@
 
 
 
-
 #from pygame import mixer
 from pygame import mixer
 
@@ -153,13 +152,13 @@ object_relations = {
     "hogwarts": [dumbledore,wand, mirror_enrised, snake_door],
     "mirror enrised": [key_snake],
     "outside": [fenix_door],
-    "snake door": [hogwarts, azkaban],
-    #"snake door":[dumbledore_chamber],
+    # "snake door": [hogwarts, azkaban],
+    "snake door":[dumbledore_chamber],
     "weasley clock":[key_dwarves],
     "dwarves door":[azkaban, diagon_alley],
     "elfes door":[azkaban, dumbledore_chamber],
     "portkey":[key_elfes],
-    "pensieve": [key_fenix, spell],
+    "pensieve": [key_fenix],#, spell],
     "dinning table":[dumbledore_chamber],
     "fenix door":[dumbledore_chamber, outside],
     "azkaban":[weasley_clock,snake_door, dwarves_door, elfes_door],
@@ -200,7 +199,7 @@ def start_game():
     mixer.init()
 
     # Loading the song
-    mixer.music.load("C:\\Users\\User\Desktop\\IronHack\\python-project\\your-code\\harry.mp3")
+    mixer.music.load("C:\\Users\\User\\Desktop\\IronHack\\python-project\\your-code\\harry.mp3")
 
     # Setting the volume
     mixer.music.set_volume(0.7)
@@ -217,6 +216,22 @@ def start_game():
 
     play_room(game_state["current_room"])
 
+def quiz():
+    print('A dementor is coming!!!!!')
+    spell_question = ''
+    if spell in game_state["keys_collected"]:
+        while spell_question.strip().lower() != 'expecto patrono':
+            spell_question = input('What is the spell to fight a dementor?')
+        mixer.music.pause()
+        print('the dementor is gone!!')
+        input()
+        play_room(outside)
+        return outside
+    else:
+        print("you don't know how to fight the dementor and you fled")
+        input()
+        play_room(hogwarts)
+
 def play_room(room):
     """
     Play a room. First check if the room being played is the target room.
@@ -225,8 +240,9 @@ def play_room(room):
 
     game_state["current_room"] = room
     if(game_state["current_room"] == game_state["target_room"]):
-        mixer.music.pause()
+        #mixer.music.pause()
         print("Congrats! You escaped the room!")
+        exit()
     else:
 #         if room["name"] == game_state["current_room"]:    
 #         print("\n You are still in: " + room["name"])
@@ -264,6 +280,8 @@ def get_next_room_of_door(door, current_room):
     From object_relations, find the two rooms connected to the given door.
     Return the room that is not the current_room.
     """
+    if door == fenix_door:
+        quiz()
     connected_rooms = object_relations[door["name"]]
     for room in connected_rooms:
         if(not current_room == room):
