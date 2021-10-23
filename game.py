@@ -93,10 +93,12 @@ def fail_sound():
     playsound('sounds/fail.wav')
 def congrats_sound():
     playsound('sounds/congrats.wav')
+def happy_halloween():
+    playsound('sounds/happyhalloween.mp3')
 
 
 def zombie_enigma():
-    timeout = time.time() + 20   # 30 seconds from now
+    timeout = time.time() + 20   # 20 seconds from now
     result = False
     while True:
         x = input('You have 20 seconds! guess a number below 10:')
@@ -115,21 +117,21 @@ def ghost_enigma():
     mistake_count = 0
     chances = 3
     while mistake_count  != 3 :
-        ghost = input(" Which room do the ghosts hate to go to? be carefull you will only have 3 chances ")
+        ghost = input("Which room do the ghosts hate to go to? be careful you will only have 3 chances! ")
         if ghost.strip().lower() == 'living room' :
                 print("Congrats! it's an easy one.")
                 return True
         else :
                 mistake_count += 1
                 chances = chances - mistake_count
-                print("No, that's not answer")
+                print("No, that's not the answer")
                 if mistake_count == 3:
                     print("Too many mistakes. GAME OVER.")
                     start_game()
 
 
 def dracula_enigma():
-    answer = input('You want to kill Dracula to retrieve the key.\nYou see a window with the curtains drawn. What do you do?').lower()
+    answer = input('You want to kill Dracula to retrieve the key.\nYou see a window with the curtains closed. What do you do?').lower()
     key_words = ['light','sunlight', 'sun', 'open']
     result = False
     for word in key_words:
@@ -145,7 +147,20 @@ def dracula_enigma():
     return result
 
 def werewolf_enigma():
-    return True
+    mistake_count = 0
+    chances = 3
+    while mistake_count  != 3 :
+        werewolf = input("The werewolf is asking you to solve a simple math problem in exchange for a key. \nYou have 3 chances. What is 10 x 10 + 1? ")
+        if int(werewolf) == 101 :
+                print("Congrats! it's an easy one.")
+                return True
+        else :
+                mistake_count += 1
+                chances = chances - mistake_count
+                print("No, that's not the answer")
+                if mistake_count == 3:
+                    print("Too many mistakes. GAME OVER.")
+                    start_game()
 
 # define which items/rooms are related
 
@@ -200,6 +215,7 @@ def play_room(room):
     """
     game_state["current_room"] = room
     if(game_state["current_room"] == game_state["target_room"]):
+        show_image('exit')
         print("Congrats! You escaped the room!")
     else:
         print("You are now in " + room["name"])
