@@ -1,11 +1,15 @@
-#ESCAPE: AN ADVENTURE IN THE MIDDLE-EARTH
+# ESCAPE: AN ADVENTURE IN THE MIDDLE-EARTH
 
-#Warning: to run this code, you need termcolor package
-#To install this package with conda, run: conda install -c omnia termcolor
+# IMPORT LIBRARIES
+import time
+from traceback import TracebackException
+from termcolor import colored
+from random import randint
 
-#SECTION 1: DEFINITIONS
 
-# define items in THE SHIRE
+# SECTION 1: DEFINITIONS
+
+# Define items in THE SHIRE
 
 bilbo_house = {
     "name": "House Bilbo",
@@ -33,7 +37,7 @@ the_shire = {
     "type": "room",
 }
 
-# define items in GONDOR
+# Define items in GONDOR
 
 road_b = {
     "name": "road b",
@@ -51,7 +55,6 @@ map_b = {
     "target": road_b,
 }
 
-
 road_c = {
     "name": "road c",
     "type": "door",
@@ -62,14 +65,14 @@ gondor = {
     "type": "room",
 }
 
-# this is not an area - definition of road d before defining map d
+# This is not an area - definition of road d before defining map d
 
 road_d = {
     "name": "road d",
     "type": "door",
 }
 
-# define items in ROHAN
+# Define items in ROHAN
 
 map_c = {
     "name": "map c",
@@ -103,7 +106,7 @@ rohan = {
     "type": "room",
 }
 
-# define items in MORDOR
+# Define items in MORDOR
 
 eye_tower = {
     "name": "Eye Tower",
@@ -125,23 +128,19 @@ mordor = {
     "type": "room",
 }
 
-
-# define outside
+# Define OUTSIDE
 
 outside = {
   "name": "MOUNT DOOM"
 }
 
-
-# define all rooms(areas) and doors(roads)
+# Define all rooms(areas) and doors(roads)
 
 all_rooms = [the_shire, gondor, rohan, mordor, outside]  
 
 all_doors = [road_a, road_b, road_c, road_d]
 
-
-
-# define which places/areas are related
+# Define which places/areas are related
 
 object_relations = {
     "THE SHIRE": [bilbo_house, sam_house, road_a],
@@ -159,10 +158,11 @@ object_relations = {
     "road d": [mordor, outside]
 }
 
+
 # SECTION 2 - DEFINE STATE AT GAME START
 
-# define game state. Do not directly change this dict. 
-# Instead, when a new game starts, make a copy of this
+# Define game state.  
+# When a new game starts, make a copy of this
 # dict and use the copy to store gameplay state. This 
 # way you can replay the game multiple times.
 
@@ -172,8 +172,6 @@ INIT_GAME_STATE = {
     "target_room": outside
 }
 
-import time
-from traceback import TracebackException
 
 #SECTION 3 - FUNCTIONS TO PLAY THE GAME
 
@@ -187,7 +185,6 @@ def start_game():
     """
     Start the game
     """
-    from termcolor import colored    #needed to display title in color
     global start
     start = time.time()
     print('***********\n')
@@ -216,13 +213,12 @@ def start_game():
 
 def play_room(room):
     """
-    Play a room. First check if the room being played is the target room.
+    Play a room (area). First check if the room being played is the target room.
     If it is, the game will end with success. Otherwise, let player either 
     explore (list all items in this room) or examine an item found here.
     """
     game_state["current_room"] = room
     if(game_state["current_room"] == game_state["target_room"]):
-        from termcolor import colored
         print('***********\n')
         print(colored("\nYou destroyed the Ring and saved the free world!\n", "blue", attrs=["bold"]))
         print("""
@@ -246,7 +242,7 @@ def play_room(room):
 
 def get_next_room_of_door(door, current_room):
     """
-    From object_relations, find the two rooms connected to the given door.
+    From object_relations, find the two rooms (areas) connected to the given door.
     Return the room that is not the current_room.
     """
     connected_rooms = object_relations[door["name"]]
@@ -256,12 +252,12 @@ def get_next_room_of_door(door, current_room):
 
 def examine_item(item_name):
     """
-    Examine an item which can be a door or furniture.
-    First make sure the intended item belongs to the current room.
-    Then check if the item is a door. Tell player if key hasn't been 
+    Examine an item.
+    First make sure the intended item belongs to the current room (area).
+    Then check if the item is a door. Tell player if map hasn't been 
     collected yet. Otherwise ask player if they want to go to the next
-    room. If the item is not a door, then check if it contains keys.
-    Collect the key if found and update the game state. At the end,
+    area. If the item is not a door, then check if it contains maps.
+    Collect the map if found and update the game state. At the end,
     play either the current or the next room depending on the game state
     to keep playing.
     """
@@ -270,8 +266,6 @@ def examine_item(item_name):
     next_room = ""
     output = None
     game_win = False  
-
-    from termcolor import colored
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
@@ -318,9 +312,6 @@ def rock_paper_scissors():
     """This function triggers the rock-paper-scissors game
     It returns the result of the game (either player wins or
     Gollum wins)"""
-
-    from random import randint
-    from termcolor import colored
 
     player_wins = 0
     computer_wins = 0

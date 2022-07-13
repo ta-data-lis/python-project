@@ -1,14 +1,14 @@
 
 ![Header](https://raw.githubusercontent.com/mgluengo/python-project/master/header.png "Header")
 
-## Welcome to the Shire!
+## Welcome To The Shire!
 
 It’s time to play some old-school games! :video_game:
 
 Ok, perhaps typing commands on your terminal is not your idea of fun, but we believe that adding **The Lord of The Rings** to the mix always helps. So, here’s a nerdy and retro option to consider after you finish binge-watching the latest season of Stranger Things. 
 
 
-## Project context
+## Project Context
 
 This (humble) Escape Game was our **very first Python project** as newbie programmers at Ironhack. 
 
@@ -41,7 +41,7 @@ There’s no going back.*
 
 [![Python](https://img.shields.io/badge/Python-9146FF?style=for-the-badge&logo=python&logoColor=white&labelColor=101010)]()
 
-## What we Learned
+## What We Learned
 
 
 -	Working with **dicts, lists, tuples**
@@ -51,7 +51,7 @@ There’s no going back.*
 -	… the adrenaline rush you feel when you make your code work! :surfer:
 
 
-## Next steps
+## Next Steps
 
 
 With more time, we would have prioritized the following enhancements:
