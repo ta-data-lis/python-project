@@ -1,5 +1,5 @@
 
-![Header](https://raw.githubusercontent.com/mgluengo/python-project/master/header.png "Header")
+![Header](https://raw.githubusercontent.com/mgluengo/python-project/master/images/header.png "Header")
 
 ## Welcome To The Shire!
 
@@ -17,7 +17,7 @@ We went from not having coded a line before, to making this work in **less than 
 
 ## Game Narrative
 
-![Shire](https://raw.githubusercontent.com/mgluengo/python-project/master/the_shire.png "Shire")
+![Shire](https://raw.githubusercontent.com/mgluengo/python-project/master/images/the_shire.png "Shire")
 
 >*Hurry up, hobbit!*
 
@@ -34,7 +34,7 @@ There’s no going back.*
 ## Game Map
 
 
-![Game Map](https://github.com/mgluengo/python-project/blob/master/middle_earth_map.png)
+![Game Map](https://github.com/mgluengo/python-project/blob/master/images/middle_earth_map.png)
 
 
 ## Tech
@@ -60,6 +60,10 @@ With more time, we would have prioritized the following enhancements:
 -	Repurpose challenges and add **coding quizzes** to review the content of our classes (introduce **gamification** in the context of the bootcamp).
 -	**Expand scope** with additional maps, characters and elements to interact with. 
 -	Introduce **random** elements, so the experience is different every time you play.
+
+## Links
+
+:point_right: [See full project ppt on SpeakerDeck](https://speakerdeck.com/mgluengo/python-escape-game-lord-of-the-rings) 
 
 ## Team Members
 
