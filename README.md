@@ -47,7 +47,7 @@ There’s no going back.*
 -	Working with **dicts, lists, tuples**
 -	**Conditional** statements and loops
 -	**Functions**
--	Installing, importing **libraries** (e.g. time, termcolor)
+-	Installing, importing **modules** (e.g. time, termcolor)
 -	… the adrenaline rush you feel when you make your code work! :surfer:
 
 
