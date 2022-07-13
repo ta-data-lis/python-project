@@ -5,7 +5,7 @@
 
 It’s time to play some old-school games! :video_game:
 
-Ok, perhaps typing commands on your terminal is not your idea of fun, but we believe that adding **The Lord of The Rings** to the mix always helps. So, here’s a nerdy and retro option to consider after you finish binge-watching the latest season of Stranger Things. 
+Ok, perhaps typing commands in your terminal is not your idea of fun, but we believe that adding **The Lord of The Rings** to the mix always helps. So, here’s a nerdy and retro option to consider after you finish binge-watching the latest season of Stranger Things. 
 
 
 ## Project Context
