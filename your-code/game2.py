@@ -1,3 +1,9 @@
+from threading import Thread
+from multiprocessing import Process
+import sys
+import time
+from worker import abort_all_thread
+
 # define rooms and items
 #gameroom
 couch = {
@@ -143,6 +149,24 @@ INIT_GAME_STATE = {
     "target_room": outside
 }
 
+# define the countdown func.
+def countdown(t):
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        time.sleep(1)
+        if timer == '02:00':
+            print('\n2 mins left')
+        if timer == '01:00':
+            print('\n1 min left')
+        if timer == '00:30':
+            print('\n30 sec left')
+        if timer == '00:10':
+            print('\n10 sec left')
+        t -= 1
+    print("\nYou couldn't get out of the Kame House and your planet is destroyed :( \nGAME OVER!!!!")
+
+
 def linebreak():
     """
     Print a line break
@@ -153,7 +177,7 @@ def start_game():
     """
     Start the game
     """
-    print("You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!")
+    print("Son Goku, you wake up on a couch and find yourself in Kame House with all windows blocked. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house in order to safe the planet, NOW!")
     play_room(game_state["current_room"])
 
 def play_room(room):
@@ -243,4 +267,13 @@ def examine_item(item_name):
 game_state = INIT_GAME_STATE.copy()
 
 
-start_game()
+
+if __name__ == '__main__':
+    t1 = Thread(target=countdown, args=(130,)) #Setting for timer in seconds
+    t2 = Thread(target=start_game)
+    t1.start() #Calls first function
+    t2.start() #Calls second function to run at same time
+
+    t1.join()
+    if t1.is_alive() == False:
+        abort_all_thread()
