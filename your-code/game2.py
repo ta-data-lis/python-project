@@ -2,7 +2,8 @@ from threading import Thread
 from multiprocessing import Process
 import sys
 import time
-from worker import abort_all_thread
+import random
+import os
 
 # define rooms and items
 #gameroom
@@ -151,6 +152,44 @@ INIT_GAME_STATE = {
     "target_room": outside
 }
 
+def game_return(): 
+    INIT_GAME_STATE["keys_collected"]= []
+    INIT_GAME_STATE["current_room"]= game_room
+
+    object_relations["piano"] = [key_a]
+    object_relations["queen bed"] = [key_b]
+    object_relations["double bed"] = [key_c]
+    object_relations["dresser"] = [key_d]
+
+    global game_state
+    game_state = INIT_GAME_STATE.copy()
+    
+    start_game()
+
+def dresser_game():
+    print("there is a thief inside the dresser that holds the key! fight him using the folow objects:" )
+    print("Enter choice \n 0. hammer \n 1. axe \n 2. knife \n")
+    power_dict = {"hammer": 2, "axe":3, "knife":1}
+    computer_pontuation=0
+    man_pontuation=0
+    
+    for i in range (0,3):
+        choice = int(input("Choice: "))
+        computer_choice = random.randint(0, 2)
+        dict_k = list(power_dict.keys())
+        if choice == computer_choice:
+            computer_pontuation = computer_pontuation + power_dict[dict_k[computer_choice]]
+            man_pontuation = man_pontuation + power_dict[dict_k[choice]]
+        elif choice < computer_choice:
+            computer_pontuation = computer_pontuation + power_dict[dict_k[computer_choice]]
+        else:
+            man_pontuation = man_pontuation + power_dict[dict_k[choice]]
+                    
+    if computer_pontuation < man_pontuation:
+        return print("you killed the theif, you can colect the key")
+    else:
+        game_return()  
+
 # define the countdown func.
 def countdown(t):
     while t:
@@ -239,6 +278,8 @@ def examine_item(item_name):
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
             output = "You examine " + item_name + ". "
+            if item == dresser:
+                dresser_game()
             if(item["type"] == "door"):
                 have_key = False
                 for key in game_state["keys_collected"]:
@@ -279,4 +320,4 @@ if __name__ == '__main__':
 
     t1.join()
     if t1.is_alive() == False:
-        abort_all_thread()
+        os._exit(0) #
