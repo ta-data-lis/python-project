@@ -4,11 +4,11 @@ import sys
 import time
 import random
 import os
+from playsound import playsound
 
 # define rooms and items
-#gameroom
-import pygame
 
+#gameroom
 couch = {
     "name": "couch",
     "type": "furniture",
@@ -152,6 +152,11 @@ INIT_GAME_STATE = {
     "target_room": outside
 }
 
+def sound_dresser_game():
+    # for playing note.mp3 file
+    playsound('fight.mp3')
+    print('playing sound using  playsound')
+
 def game_return(): 
     INIT_GAME_STATE["keys_collected"]= []
     INIT_GAME_STATE["current_room"]= game_room
@@ -167,12 +172,12 @@ def game_return():
     start_game()
 
 def dresser_game():
+    sound_dresser_game()
     print("there is a thief inside the dresser that holds the key! fight him using the folow objects:" )
     print("Enter choice \n 0. hammer \n 1. axe \n 2. knife \n")
     power_dict = {"hammer": 2, "axe":3, "knife":1}
     computer_pontuation=0
     man_pontuation=0
-    
     for i in range (0,3):
         choice = int(input("Choice: "))
         computer_choice = random.randint(0, 2)
