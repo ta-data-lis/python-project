@@ -1,14 +1,8 @@
-from threading import Thread
-from multiprocessing import Process
-import sys
-import time
-
-import random
-import os
-
-
 # define rooms and items
 #gameroom
+from copy import copy
+import pygame
+import random
 
 couch = {
     "name": "couch",
@@ -153,7 +147,9 @@ INIT_GAME_STATE = {
     "target_room": outside
 }
 
-def game_return(): 
+
+def game_return():
+    print("gameover") 
     INIT_GAME_STATE["keys_collected"]= []
     INIT_GAME_STATE["current_room"]= game_room
 
@@ -162,10 +158,14 @@ def game_return():
     object_relations["double bed"] = [key_c]
     object_relations["dresser"] = [key_d]
 
+
     global game_state
     game_state = INIT_GAME_STATE.copy()
     
+    
     start_game()
+
+
 
 def dresser_game():
     print("there is a thief inside the dresser that holds the key! fight him using the folow objects:" )
@@ -191,40 +191,6 @@ def dresser_game():
     else:
         game_return()  
 
-# define the countdown func.
-def countdown(t):
-    while t:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(mins, secs)
-        time.sleep(1)
-        if timer == '02:00':
-            print('\n2 mins left')
-        if timer == '01:00':
-            print('\n1 min left')
-        if timer == '00:30':
-            print('\n30 sec left')
-        if timer == '00:10':
-            print('\n10 sec left')
-        t -= 1
-    print("\nYou couldn't get out of the Kame House and your planet is destroyed :( \nGAME OVER!!!!")
-
-# define the safe game
-def safe_game():
-    num = random.randint(1, 3)
-    print('Guess the correct number to open the safe: \nPut in a number between 1 and 3. You have ONLY 2 attempts to get it right.')
-    attempt = 2
-    msg = 'You Lost! \nGAME OVER!!!'
-    while attempt > 0:
-        user_input = int(input('Enter Number: '))
-        if user_input == num:
-            msg = 'CONGRATULATIONS! You Won!'
-            break
-        else:
-            print(f'Try again! {attempt} attempt left.')
-            attempt -= 1
-            continue
-    print(msg)
-
 def linebreak():
     """
     Print a line break
@@ -235,7 +201,7 @@ def start_game():
     """
     Start the game
     """
-    print("Son Goku, you wake up on a couch and find yourself in Kame House with all windows blocked. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house in order to safe the planet, NOW!")
+    print("You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!")
     play_room(game_state["current_room"])
 
 def play_room(room):
@@ -294,8 +260,6 @@ def examine_item(item_name):
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
-            #if item["name"] == 'safe':
-            #    safe_game()
             output = "You examine " + item_name + ". "
             if item == dresser:
                 dresser_game()
@@ -331,12 +295,4 @@ game_state = INIT_GAME_STATE.copy()
 
 
 
-if __name__ == '__main__':
-    t1 = Thread(target=countdown, args=(130,)) #Setting for timer in seconds
-    t2 = Thread(target=start_game)
-    t1.start() #Calls first function
-    t2.start() #Calls second function to run at same time
-
-    t1.join()
-    if t1.is_alive() == False:
-        os._exit(0) #
+start_game()
