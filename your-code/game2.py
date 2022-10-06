@@ -152,14 +152,10 @@ INIT_GAME_STATE = {
     "current_room": game_room,
     "keys_collected": [],
     "target_room": outside
-}
-
-def sound_dresser_game():
-    # for playing note.mp3 file
-    playsound('fight.mp3')
-    print('playing sound using  playsound')
+}    
 
 def game_return(): 
+
     INIT_GAME_STATE["keys_collected"]= []
     INIT_GAME_STATE["current_room"]= game_room
 
@@ -173,8 +169,11 @@ def game_return():
     
     start_game()
 
+def play_sound():
+    playsound('/Users/rutepalminha/Desktop/game/python-project/slaps.wav')
+
 def dresser_game():
-    sound_dresser_game()
+    play_sound()
     print("there is a thief inside the dresser that holds the key! fight him using the folow objects:" )
     print("Enter choice \n 0. hammer \n 1. axe \n 2. knife \n")
     power_dict = {"hammer": 2, "axe":3, "knife":1}
@@ -306,6 +305,7 @@ def examine_item(item_name):
                 safe_game()
             output = "You examine " + item_name + ". "
             if item == dresser:
+                play_sound()
                 dresser_game()
             if(item["type"] == "door"):
                 have_key = False
