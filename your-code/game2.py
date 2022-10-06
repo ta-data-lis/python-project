@@ -2,9 +2,11 @@ from threading import Thread
 from multiprocessing import Process
 import sys
 import time
+
 import random
 import os
 from playsound import playsound
+
 
 # define rooms and items
 
@@ -25,8 +27,8 @@ key_a = {
     "target": door_a,
 }
 
-piano = {
-    "name": "piano",
+safe = {
+    "name": "safe",
     "type": "furniture",
 }
 
@@ -121,8 +123,8 @@ all_doors = [door_a, door_b, door_c, door_d]
 # define which items/rooms are related
 
 object_relations = {
-    "game room": [couch, piano, door_a],
-    "piano": [key_a],
+    "game room": [couch, safe, door_a],
+    "safe": [key_a],
     "door a": [game_room, bedroom1],
 
     "bedroom 1":[queenbed, door_b, door_c],
@@ -161,7 +163,7 @@ def game_return():
     INIT_GAME_STATE["keys_collected"]= []
     INIT_GAME_STATE["current_room"]= game_room
 
-    object_relations["piano"] = [key_a]
+    object_relations["safe"] = [key_a]
     object_relations["queen bed"] = [key_b]
     object_relations["double bed"] = [key_c]
     object_relations["dresser"] = [key_d]
@@ -201,6 +203,8 @@ def countdown(t):
         mins, secs = divmod(t, 60)
         timer = '{:02d}:{:02d}'.format(mins, secs)
         time.sleep(1)
+        if timer == '03:00':
+            print('\n3 mins left')
         if timer == '02:00':
             print('\n2 mins left')
         if timer == '01:00':
@@ -212,6 +216,22 @@ def countdown(t):
         t -= 1
     print("\nYou couldn't get out of the Kame House and your planet is destroyed :( \nGAME OVER!!!!")
 
+# define the safe game
+def safe_game():
+    num = random.randint(1, 3)
+    print('Guess the correct number to open the safe: \nPut in a number between 1 and 3. You have ONLY 2 attempts to get it right.')
+    attempt = 2
+    msg = 'You Lost! \nGAME OVER!!!'
+    while attempt > 0:
+        user_input = int(input('Enter Number: '))
+        if user_input == num:
+            msg = 'CONGRATULATIONS! You Won!'
+            break
+        else:
+            print(f'Try again! {attempt} attempt left.')
+            attempt -= 1
+            continue
+    print(msg)
 
 def linebreak():
     """
@@ -282,6 +302,8 @@ def examine_item(item_name):
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
+            if item["name"] == 'safe':
+                safe_game()
             output = "You examine " + item_name + ". "
             if item == dresser:
                 dresser_game()
@@ -318,7 +340,7 @@ game_state = INIT_GAME_STATE.copy()
 
 
 if __name__ == '__main__':
-    t1 = Thread(target=countdown, args=(130,)) #Setting for timer in seconds
+    t1 = Thread(target=countdown, args=(180,)) #Setting for timer in seconds
     t2 = Thread(target=start_game)
     t1.start() #Calls first function
     t2.start() #Calls second function to run at same time
