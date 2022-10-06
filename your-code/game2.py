@@ -3,6 +3,7 @@ from multiprocessing import Process
 import sys
 import time
 from worker import abort_all_thread
+import random
 
 # define rooms and items
 #gameroom
@@ -166,6 +167,22 @@ def countdown(t):
         t -= 1
     print("\nYou couldn't get out of the Kame House and your planet is destroyed :( \nGAME OVER!!!!")
 
+# define the safe game
+def safe_game():
+    num = random.randint(1, 3)
+    print('Guess the correct number to open the safe: \nPut in a number between 1 and 3. You have ONLY 2 attempts to get it right.')
+    attempt = 2
+    msg = 'You Lost! \nGAME OVER!!!'
+    while attempt > 0:
+        user_input = int(input('Enter Number: '))
+        if user_input == num:
+            msg = 'CONGRATULATIONS! You Won!'
+            break
+        else:
+            print(f'Try again! {attempt} attempt left.')
+            attempt -= 1
+            continue
+    print(msg)
 
 def linebreak():
     """
@@ -236,6 +253,8 @@ def examine_item(item_name):
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
+            if item["name"] == 'safe':
+                safe_game()
             output = "You examine " + item_name + ". "
             if(item["type"] == "door"):
                 have_key = False
