@@ -26,8 +26,8 @@ key_a = {
     "target": door_a,
 }
 
-piano = {
-    "name": "piano",
+safe = {
+    "name": "safe",
     "type": "furniture",
 }
 
@@ -122,8 +122,8 @@ all_doors = [door_a, door_b, door_c, door_d]
 # define which items/rooms are related
 
 object_relations = {
-    "game room": [couch, piano, door_a],
-    "piano": [key_a],
+    "game room": [couch, safe, door_a],
+    "safe": [key_a],
     "door a": [game_room, bedroom1],
 
     "bedroom 1":[queenbed, door_b, door_c],
@@ -157,7 +157,7 @@ def game_return():
     INIT_GAME_STATE["keys_collected"]= []
     INIT_GAME_STATE["current_room"]= game_room
 
-    object_relations["piano"] = [key_a]
+    object_relations["safe"] = [key_a]
     object_relations["queen bed"] = [key_b]
     object_relations["double bed"] = [key_c]
     object_relations["dresser"] = [key_d]
@@ -197,6 +197,8 @@ def countdown(t):
         mins, secs = divmod(t, 60)
         timer = '{:02d}:{:02d}'.format(mins, secs)
         time.sleep(1)
+        if timer == '03:00':
+            print('\n3 mins left')
         if timer == '02:00':
             print('\n2 mins left')
         if timer == '01:00':
@@ -294,8 +296,8 @@ def examine_item(item_name):
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
-            #if item["name"] == 'safe':
-            #    safe_game()
+            if item["name"] == 'safe':
+                safe_game()
             output = "You examine " + item_name + ". "
             if item == dresser:
                 dresser_game()
@@ -332,7 +334,7 @@ game_state = INIT_GAME_STATE.copy()
 
 
 if __name__ == '__main__':
-    t1 = Thread(target=countdown, args=(130,)) #Setting for timer in seconds
+    t1 = Thread(target=countdown, args=(180,)) #Setting for timer in seconds
     t2 = Thread(target=start_game)
     t1.start() #Calls first function
     t2.start() #Calls second function to run at same time
