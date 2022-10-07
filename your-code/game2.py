@@ -172,6 +172,9 @@ def game_return():
 def play_sound():
     playsound('/Users/rutepalminha/Desktop/game/python-project/slaps.wav')
 
+def play_sound1():
+    playsound('/Users/rutepalminha/Desktop/game/python-project/safe.wav')
+
 def dresser_game():
     play_sound()
     print("there is a thief inside the dresser that holds the key! fight him using the folow objects:" )
@@ -217,6 +220,7 @@ def countdown(t):
 
 # define the safe game
 def safe_game():
+    play_sound1()
     num = random.randint(1, 3)
     print('Guess the correct number to open the safe: \nPut in a number between 1 and 3. You have ONLY 2 attempts to get it right.')
     attempt = 2
@@ -229,8 +233,10 @@ def safe_game():
         else:
             print(f'Try again! {attempt} attempt left.')
             attempt -= 1
-            continue
-    print(msg)
+            if attempt==0:
+                return print(msg),(game_return)
+     #print(msg)
+    #return(game_return)
 
 def linebreak():
     """
@@ -301,11 +307,12 @@ def examine_item(item_name):
     
     for item in object_relations[current_room["name"]]:
         if(item["name"] == item_name):
-            if item["name"] == 'safe':
-                safe_game()
+            #if item["name"] == 'safe':
+                #safe_game()
             output = "You examine " + item_name + ". "
+            if item == safe:
+                safe_game()
             if item == dresser:
-                play_sound()
                 dresser_game()
             if(item["type"] == "door"):
                 have_key = False
