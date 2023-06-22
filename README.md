@@ -32,7 +32,7 @@ The player is asked to provide a name, and then the game starts in a specific ro
 - Examine: allows them to inspect furniture in order to find keys, and, if applied to doors while in presence of the respective key, grants access through the door (yes/no option)
 
 The customized rooms, furnitures, doors and keys that the player can encounter in the game are:
-- 4+1 rooms: the room of insomnia, diamond room, the room of Alice, the room of reasoning, outside (**victory condition**, a timer indicates the duration of the game)
+- 4+1 rooms: the room of insomnia, diamond room, the room of Alice, the room of reasoning, outside **(victory condition)**
 - 6 furnitures: bed of nails, escritoire desk, steel chest, Red Queen bed, White Knight dresser, bag of problems
 - 4 doors: veil of darkness, black hole, open mouth, arch of life
 - 4 keys: candle-light, diamond, small pill , large pill **(random assignment)**
