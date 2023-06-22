@@ -12,7 +12,7 @@ Text-based adventure games have inspired gaming development since 1977. Our goal
 
 ## Game Design
 
-Our development consists of 3 (and a half...) features:
+Our development consists of 3 (and a half) features:
 - :fearful: Environment thematic customization: _surreal nightmare_ - personalization of the experience (MVP)
 - :mag: _"check"_ action addition - gameplay (towards a future "inventory" feature)
 - :repeat: Map layout _differentiation_ - replayability (towards a future map layout "randomization" feature and a "random spawn location" feature)
