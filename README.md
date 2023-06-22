@@ -22,7 +22,20 @@ Our development consists of 3 (and a half) features:
 
 ### Game Narratives
 
+The player starts in a specific room. They can utilize a menu of three **actions** ("explore", "check", or "examine") in order to move further in the game:
+- Explore: indicates to the player the room they currently are, the furniture present and the doors of the room
+- Check: informs the player about the keys that the player has collected
+- Examine: allows the player to inspect furniture in order to find keys, if applied to doors while in presence of the respective key allows the player to cross through the door if they wish (yes/no option)
+
+The 5 rooms, 6 furnitures, 4 doors and 4 keys that the player can encounter in the game are:
+- rooms: the room of insomnia, diamond room, the room of Alice, the room of reasoning, outside **(victory condition)**
+- furnitures: bed of nails, escritoire desk, steel chest, Red Queen bed, White Knight dresser, bag of problems, 
+- doors: veil of darkness, black hole, open mouth, arch of life
+- keys: candle-light, diamond, small pill, large pill
+
 #### Game Room
+
+
 
 You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!
 
