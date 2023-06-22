@@ -15,10 +15,10 @@ Text-based adventure games like that, have inspired gaming development since 197
 Our development consists of 3 (and a half) features:
 - :fearful: Environment thematic customization: _surreal nightmare_ - personalization of the experience (MVP)
 - :mag: _"check"_ action addition - gameplay (towards a future "inventory" feature)
-- :repeat: Map layout limited _differentiation_ - replayability (towards a future map layout "randomization" feature)
-- :hourglass: Player name & _Timer_ - gameplay (towards a future "scoring" feature and a "lose condition" feature)
+- :repeat: Map layout _differentiation_ - replayability (towards a future map layout "randomization" feature and a "random spawn location" feature)
+- :hourglass: Player name & _Timer_ introduction - gameplay (towards a future "scoreboard" feature and a "lose condition" feature)
 
-The modules `time` and `random` were used, and an additional function (explore_self) was implemented.
+The Python modules `time` and `random` were used, and an additional function (explore_self) was implemented.
 
 ### Game Map
 
@@ -45,7 +45,7 @@ The customized rooms, furnitures, doors and keys that the player can encounter i
 
 2. Launch `surreal-escapy.py` (in command prompt, type `python surreal-escape.py`)
 
-3. If you enjoyed, you might want to ~~take a break~~ spur your nostalgia further by checking some of the (successors of text-based) classic point-and-click adventure PC games I grew up with:
+3. If you enjoyed, you might want to ~~take a break~~ :sparkles: spur your nostalgia further :sparkles: by checking some of the (successors of text-based) classic point-and-click adventure PC games I grew up with:
    - [Zak McKracken and the Alien Mindbenders](https://en.wikipedia.org/wiki/Zak_McKracken_and_the_Alien_Mindbenders) 1988
    - [KGB](https://en.wikipedia.org/wiki/KGB_(video_game)) 1992
    - [Gabriel Knight: Sins of the Fathers](https://en.wikipedia.org/wiki/Gabriel_Knight) 1993
