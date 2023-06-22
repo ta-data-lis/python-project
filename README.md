@@ -22,124 +22,21 @@ Our development consists of 3 (and a half) features:
 
 ### Game Narratives
 
-The player starts in a specific room. They can utilize a menu of three **actions** ("explore", "check", or "examine") in order to move further in the game:
+The player is asked to provide a name, and then starts the game in a specific room. They can utilize a menu of three **actions** ("explore", "check", or "examine") in order to move further in the game:
 - Explore: indicates to the player the room they currently are, the furniture present and the doors of the room
 - Check: informs the player about the keys that the player has collected
 - Examine: allows the player to inspect furniture in order to find keys, if applied to doors while in presence of the respective key allows the player to cross through the door if they wish (yes/no option)
 
 The 5 rooms, 6 furnitures, 4 doors and 4 keys that the player can encounter in the game are:
-- rooms: the room of insomnia, diamond room, the room of Alice, the room of reasoning, outside **(victory condition)**
+- rooms: the room of insomnia, diamond room, the room of Alice, the room of reasoning, outside **(victory condition, a timer indicates the duration of the game)**
 - furnitures: bed of nails, escritoire desk, steel chest, Red Queen bed, White Knight dresser, bag of problems, 
 - doors: veil of darkness, black hole, open mouth, arch of life
-- keys: candle-light, diamond, small pill, large pill
-
-#### Game Room
-
-
-
-You wake up on a couch and find yourself in a strange house with no windows which you have never been to before. You don't remember why you are here and what had happened before. You feel some unknown danger is approaching and you must get out of the house, NOW!
-
-You are now in game room.
-
-What would you like to do?
-
-You explore the room. This is Game Room. You find couch, piano, and Door A.
-
-You examine couch. There isn't anything interesting about it.
-
-You examine Door A. It is locked but you don't have the key.
-
-You examine piano. You find key for Door A.
-
-You examine Door A. Your unlock it with a key you have.
-
-Do you want to go to the next room?
-
-#### Bedroom 1
-
-You are now in Bedroom 1.
-
-What would you like to do?
-
-You explore the room. This is Bedroom 1. You find queen bed, Door A, Door B, and Door C.
-
-You examine queen bed. You find key for Door B.
-
-You examine Door C. It is locked but you don't have the key.
-
-You examine Door B. Your unlock it with a key you have.
-
-Do you want to go to the next room?
-
-#### Bedroom 2
-
-You are now in Bedroom 2.
-
-What would you like to do?
-
-You explore the room. This is Bedroom 2. You find double bed, dresser, and Door B.
-
-You examine double bed. You find key for Door C.
-
-You examine dresser. You find key for Door D.
-
-You examine Door B. Your unlock it with a key you have.
-
-Do you want to go to the next room?
-
-#### Bedroom 1
-
-You are now in Bedroom 1.
-
-What would you like to do?
-
-You examine Door C. Your unlock it with a key you have.
-
-Do you want to go to the next room?
-
-#### Living Room
-
-You are now in Living Room.
-
-What would you like to do?
-
-You explore the room. This is Living Room. You find dining table, Door C, and Door D.
-
-You examine Door D. Your unlock it with a key you have.
-
-Do you want to go to the next room?
-
-#### Outside
-
-Congrats! You escaped the room!
+- keys: candle-light **(random assignment)**, diamond, small pill **(random assignment)**, large pill **(random assignment based on small pill assignment)**
 
 ---
 
-## Getting Started
 
-Overwhelmed and don't know where to start? This is a tough challenge we know. But don't worry. We have included a working example for you to reference in which only 1 room (game room) is included. Read the example and make sure you understand it. Then you can expand on top of the example to code the rest of the rooms.
-
-The provided example is just a Minimal Viable Product (MVP). It is fully functional but not bullet proof. You should be aware of its limitations while you are working and try to make your final product as robust as possible.
-
-## Technical Requirements
-
-* Use Python lists and dictionaries to define the rooms, items, and relations of them.
-
-* Use a Python dictionary to store the game state. Update the state dictionary when progresses are made such as a key is collected.
-
-* Use Python functions to play the game. Don't use procedural code.
-
-* After completing each game action, call the next function to continue playing until the winning condition is reached.
-
-* The winning condition is for the player to successfully make to the "Outside" room. When this happens, congrat the player and end the game.
-
-## Necessary Deliverables
-
-The following deliverables should be pushed to your Github repo.
-
-* `main.ipynb` that contains your solution.
-
-## Suggested Ways to Get Started
+## How to play the Game
 
 1. Start Jupyter Notebook from this lab directory.
 
