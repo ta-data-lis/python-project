@@ -1,16 +1,18 @@
 <img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
 
-# Project: Escape Room Python Game
+# Project: Surreal EscaPY
 
 ## Overview
 
-The goal of this project is for you to apply the Python programming skills you have learned this week in solving a real problem. We present you the design of a classic game that can be played via text - Escape Room. Your goal is to develop the game using Python based on the game design.
-
-Read the game narratives and technical requirements carefully. Plan how you will achieve your goal with pseudo codes and/or flowchart. Review the logic and process in order to avoid potential errors. Then implement with Python code. After that, test your code several times with different inputs and make sure it's rock solid. The instructional team is standing by to help you in case you run into any problems.
+If you know Zork I: The Great Underground Empire ...congrats (wow, you must be older than time!). Text-based adventure games like that, have inspired gaming since 1977. Our goal for the first team project (Aris Goulas,  Letícia De Marchi, Matheus Freire) was to use our freshly-acquired Python programming skills, in order to develop the game design of a classic game - Escape Room further. We therefore present you with Surreal EscaPY!
 
 ---
 
 ## Game Design
+
+Our development consists of 3 (and a half) features:
+- Environment customization: surreal nightmare - personalization of the experience (MVP)
+- 
 
 ### Game Map
 
