@@ -19,6 +19,7 @@ Our development consists of 3 (and a half) features:
 ### Game Map
 
 ![Game Map](escape-room-plan.jpg)
+![Game Map](surreal-escape-plan.jpg)
 
 ### Game Narratives
 
