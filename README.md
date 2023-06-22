@@ -18,7 +18,7 @@ Our development consists of 3 (and a half) features:
 - :repeat: Map layout _differentiation_ - replayability (towards a future map layout "randomization" feature and a "random spawn location" feature)
 - :hourglass: Player name & _Timer_ introduction - gameplay (towards a future "scoreboard" feature and a "lose condition" feature)
 
-The Python modules `time` and `random` were used,together with an implementation of an additional function (explore_self).
+The Python modules `time` and `random` were used, together with an implementation of an additional function (explore_self).
 
 ### Game Map
 
