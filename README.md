@@ -6,7 +6,7 @@
 
 If you happen to know [Zork I: The Great Underground Empire](https://en.wikipedia.org/wiki/Zork) ...congrats! (wow, you must be older than time :wink:). 
 
-Text-based adventure games like that, have inspired gaming development since 1977. Our goal for the first team project ([Aris Goulas](https://github.com/ArisGoulas), [Letícia De Marchi](https://github.com/leticiademarchiferreira), [Matheus Freire](https://github.com/MatheusFreir) was to use our newly-acquired Python programming skills, in order to develop the design of a classic game - _Escape Room_ further. We therefore present you with **Surreal EscaPY**!
+Text-based adventure games like that, have inspired gaming development since 1977. Our goal for the first team project ([Aris Goulas](https://github.com/ArisGoulas), [Letícia De Marchi](https://github.com/leticiademarchiferreira), [Matheus Freire](https://github.com/MatheusFreir)) was to use our newly-acquired Python programming skills, in order to develop the design of a classic game - _Escape Room_ further. We therefore present you with **Surreal EscaPY**!
 
 ---
 
