@@ -38,12 +38,8 @@ The 5 rooms, 6 furnitures, 4 doors and 4 keys that the player can encounter in t
 
 ## How to play the Game
 
-1. Start Jupyter Notebook from this lab directory.
+1. Clone this repo in your GitHub.
 
-1. Launch `sample-code.ipynb` and read through the file. Also execute the code and play the game. Make sure you understand what each line of the codes does.
+2. Launch `surreal-escapy.py` (in command prompt, type `python surreal-escape.py`)
 
-1. Create `main.ipynb` and copy the codes from `sample-code.ipynb`. Expand the code following the example to create Bedroom 1.
-
-1. Test the game with Game Room and Bedroom 1. Make sure everything works then work on Bedroom 2 then Living Room.
-
-1. Test the whole game. Try to make all kinds of inputs to make sure your game is rock solid and will not break.
+3. Enjoy!
