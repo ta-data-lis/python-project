@@ -4,17 +4,17 @@
 
 ## Overview
 
-If you know [Zork I: The Great Underground Empire](https://en.wikipedia.org/wiki/Zork) ...congrats (wow, you must be older than time!). Text-based adventure games like that, have inspired gaming since 1977. Our goal for the first team project ([Aris Goulas](https://github.com/ArisGoulas), [Letícia De Marchi](https://github.com/leticiademarchiferreira), [Matheus Freire](https://github.com/MatheusFreir) was to use our freshly-acquired Python programming skills, in order to develop the game design of a classic game - Escape Room further. We therefore present you with Surreal EscaPY!
+If you know [Zork I: The Great Underground Empire](https://en.wikipedia.org/wiki/Zork) ...congrats! (wow, you must be older than time ). Text-based adventure games like that, have inspired gaming since 1977. Our goal for the first team project ([Aris Goulas](https://github.com/ArisGoulas), [Letícia De Marchi](https://github.com/leticiademarchiferreira), [Matheus Freire](https://github.com/MatheusFreir) was to use our freshly-acquired Python programming skills, in order to develop the game design of a classic game - Escape Room further. We therefore present you with **Surreal EscaPY**!
 
 ---
 
 ## Game Design
 
 Our development consists of 3 (and a half) features:
-- Environment customization: surreal nightmare - personalization of the experience (MVP)
-- "check" action addition - gameplay (towards a future inventory feature)
-- Map layout differentiation - replayability (towards a future random map feature)
-- Player name & Timer - gameplay (towards a future scoring feature)
+- :fearful: Environment thematic customization: _surreal nightmare_ - personalization of the experience (MVP)
+- :mag: _"check"_ action addition - gameplay (towards a future "inventory" feature)
+- :repeat: Map layout limited _differentiation_ - replayability (towards a future map layout "randomization" feature)
+- :hourglass: Player name & _Timer_ - gameplay (towards a future "scoring" feature and a "lose condition" feature)
 
 ### Game Map
 
