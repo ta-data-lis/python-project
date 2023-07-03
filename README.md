@@ -22,7 +22,7 @@ The Python modules `time` and `random` were used, together with an implementatio
 
 ### Game Map
 
-![Game Map adapted](surreal-escape-plan.jpg)
+![Game Map adapted](surreal-escapy-plan.jpg)
 
 ### Game Narratives
 
